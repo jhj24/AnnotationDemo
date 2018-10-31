@@ -57,6 +57,7 @@ public Constructor getDeclaredConstructor(Class... parameterTypes)
 
 3). 调用构造方法：
 ``` java
+newInstance()
 newInstance(Object... initargs)
 ```
 #### 成员变量
@@ -121,3 +122,8 @@ Method --> public Object invoke(Object obj,Object... args):
 ###
 
 f.setAccessible(true);//暴力反射，解除私有限定
+getReturnType() //获取返回值的参数类型
+getParameterTypes() //获取传入的参数方法类型
+getSuperclass() //获取该类的父类
+getInterfaces() //获取该类实现的接口
+getAnnotation(Class<T> annotationClass) 获取方法中的注解
