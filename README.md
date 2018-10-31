@@ -22,23 +22,23 @@
 
 - 调用某个对象的getClass()方法
 ``` java
-Person p=new Person();
-Class clazz=p.getClass();
+Person p = new Person();
+Class clazz = p.getClass();
 ```
 - 调用某个类的class属性来获取该类对应的Class对象
-```
-Class clazz=Person.class;
+``` java
+Class clazz = Person.class;
 ```
 - 使用Class类中的forName()静态方法; (最安全/性能最好)
-```
-Class clazz=Class.forName("com.xxx.xxx..."); (类的全路径，最常用)
+``` java 
+Class clazz = Class.forName("com.xxx.xxx..."); (类的全路径，最常用)
 ```
 ### 3.2 获取Class类中的方法
 
 #### 构造方法
 
 1). 批量的方法： 	
-```
+``` java 
 //所有"公有的"构造方法
 public Constructor[] getConstructors()
 
@@ -47,7 +47,7 @@ public Constructor[] getDeclaredConstructors()
 ```
 
 2). 获取单个的方法
-```
+``` java
 //获取单个的"公有的"构造方法
 public Constructor getConstructor(Class... parameterTypes)
 
@@ -56,13 +56,13 @@ public Constructor getDeclaredConstructor(Class... parameterTypes)
 ```
 
 3). 调用构造方法：
-```
+``` java
 newInstance(Object... initargs)
 ```
 #### 成员变量
 
 1).批量的
-```
+``` java
 //获取所有的"公有字段"
 Field[] getFields()
 //获取所有字段，包括：私有、受保护、默认、公有
@@ -70,7 +70,7 @@ Field[] getDeclaredFields()
 ```
 
 2).获取单个的：
-```
+``` java
 //获取某个"公有的"字段
 public Field getField(String fieldName)
 //获取某个字段(可以是私有的)
@@ -78,8 +78,8 @@ public Field getDeclaredField(String fieldName)
 ```
 
 3).设置字段的值：
-```
-	Field --> public void set(Object obj,Object value):
+``` java
+Field --> public void set(Object obj,Object value):
 ```
 参数说明：
 - obj:要设置的字段所在的对象；
@@ -88,7 +88,7 @@ public Field getDeclaredField(String fieldName)
 #### 成员方法
 
 1).批量的：
-```
+``` java
 //获取所有"公有方法"；（包含了父类的方法也包含Object类）
 public Method[] getMethods()
 //获取所有的成员方法，包括私有的(不包括继承的)
@@ -96,7 +96,7 @@ public Method[] getDeclaredMethods()
  ```
 
 2).获取单个的：
- ```
+ ``` java
  //获取某个"公有的"方法
 public Method getMethod(String name,Class<?>... parameterTypes):
 //获取某个方法(可以是私有的)
@@ -107,7 +107,7 @@ public Method getDeclaredMethod(String name,Class<?>... parameterTypes)
 - Class ... : 形参的Class类型对象
 
 3). 调用方法：
- ```
+ ``` java
 Method --> public Object invoke(Object obj,Object... args):
 ```
 参数说明：
