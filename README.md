@@ -21,7 +21,7 @@
 ### 3.1 获取Class对象
 
 - 调用某个对象的getClass()方法
-```
+``` java
 Person p=new Person();
 Class clazz=p.getClass();
 ```
