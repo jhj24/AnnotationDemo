@@ -117,13 +117,13 @@ Method --> public Object invoke(Object obj,Object... args):
 
 ### 3.3 使用反射API操作
 
+使用 Constructor 的newInstance()方法创建新的对象，用 get() 和 set() 方法读取和修改与 Field 对象关联的字段，用 invoke() 方法调用与 Method 对象关联的方法。另外，还可以调用 getFields() getMethods() 和 getConstructors() 等很便利的方法，以返回表示字段，方法，以及构造器的对象的数组
 
 
-###
-
-f.setAccessible(true);//暴力反射，解除私有限定
-getReturnType() //获取返回值的参数类型
-getParameterTypes() //获取传入的参数方法类型
-getSuperclass() //获取该类的父类
-getInterfaces() //获取该类实现的接口
-getAnnotation(Class<T> annotationClass) 获取方法中的注解
+### 4. 常用方法
+- setAccessible(true);//暴力反射，解除私有限定
+- getReturnType() //获取返回值的参数类型
+- getParameterTypes() //获取传入的参数方法类型
+- getSuperclass() //获取该类的父类
+- getInterfaces() //获取该类实现的接口
+- getAnnotation(Class<T> annotationClass) 获取方法中的注解
